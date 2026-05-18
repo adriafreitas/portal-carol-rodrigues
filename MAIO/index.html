@@ -152,28 +152,8 @@
       cursor: pointer;
     }
 
-    .semana::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(250,219,93,0.1) 0%, transparent 70%);
-      transform: scale(0);
-      transition: transform 0.6s ease;
-      pointer-events: none;
-    }
-
-    .semana:hover::before {
-      transform: scale(1);
-    }
-
     .semana:hover {
-      background: linear-gradient(135deg, rgba(138,43,226,0.4), rgba(75,0,130,0.35));
       transform: translateY(-5px) scale(1.02);
-      border-color: rgba(250,219,93,0.8);
-      box-shadow: 0 15px 35px rgba(138,43,226,0.4), 0 0 20px rgba(250,219,93,0.3);
     }
 
     .semana-num {
@@ -181,17 +161,11 @@
       font-weight: 700;
       display: block;
       margin-bottom: 5px;
-      letter-spacing: 1.5px;
-      text-shadow: 0 2px 10px rgba(250,219,93,0.5);
-      pointer-events: none;
     }
 
     .semana-data {
       font-size: clamp(12px, 3vw, 15px);
       opacity: 0.8;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      pointer-events: none;
     }
 
     .pdf-btn {
@@ -205,196 +179,154 @@
       border-radius: 20px;
       text-decoration: none;
       color: #fadb5d;
-      transition: all 0.4s ease;
       font-size: 12px;
       font-weight: bold;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       cursor: pointer;
-    }
-
-    .pdf-btn:hover {
-      background: linear-gradient(135deg, rgba(250,219,93,0.3), rgba(218,165,32,0.25));
-      transform: translateY(-5px);
-      border-color: #fadb5d;
-      box-shadow: 0 15px 30px rgba(250,219,93,0.2);
-    }
-
-    .pdf-btn span {
-      display: block;
-      text-align: center;
-      line-height: 1.2;
     }
 
     .player{
       position:fixed;
       inset:0;
       background:rgba(5,5,25,0.98);
-      backdrop-filter:blur(20px);
       display:none;
       align-items:center;
       justify-content:center;
       z-index:10000;
-      padding:20px;
     }
 
-    .player.active{display:flex;}
+    .player.active{
+      display:flex;
+    }
 
     .player-card{
       width:100%;
       max-width:500px;
-      background:linear-gradient(145deg,rgba(15,15,45,0.98),rgba(30,15,60,0.95));
-      border:2px solid rgba(250,219,93,0.6);
-      border-radius:30px;
       padding:40px 30px;
       text-align:center;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.8), 0 0 50px rgba(138,43,226,0.3);
-    }
-
-    .player-title{
-      font-size: 28px;
-      margin-bottom:10px;
-      background:linear-gradient(45deg,#fadb5d,#ffed4e,#daa520);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .player-week{
-      font-size: 18px;
-      margin-bottom:25px;
-      color:#e6d4a8;
-    }
-
-    audio{
-      width:100%;
-      margin-bottom:30px;
+      background:#1b1035;
+      border-radius:30px;
     }
 
     .back-btn{
-      display:inline-block;
-      background: linear-gradient(135deg, rgba(138,43,226,0.6), rgba(75,0,130,0.5));
-      color:#fadb5d;
-      text-decoration:none;
-      padding:12px 35px;
-      border-radius:50px;
-      font-weight:600;
-      border:1px solid rgba(250,219,93,0.4);
-      transition:all 0.3s;
-      cursor: pointer;
-    }
-
-    .back-btn:hover{
-      transform:scale(1.05);
-      background: linear-gradient(135deg, rgba(138,43,226,0.8), rgba(75,0,130,0.7));
-      box-shadow: 0 0 20px rgba(138,43,226,0.5);
-    }
-
-    @media(max-width:600px){
-      .portal{padding:40px 20px; margin:20px auto;}
-      .button-group { gap: 10px; }
-      .pdf-btn { width: 80px; font-size: 10px; }
-      .semana { padding: 15px 10px; }
+      cursor:pointer;
     }
   </style>
 </head>
 <body>
-  <div class="portal">
-    <div class="astros">🪐✨🪐</div>
-    <h1>Portal Místico - Maio</h1>
-    <p class="subtitle">
-      Toda segunda-feira seus áudios semanais são liberados.<br>
-      Sua leitura em áudio: voz Adria Freitas
-    </p>
 
-    <!-- SEMANA 1 -->
-    <div class="button-group">
-      <a href="#" data-audio="SOM5/Carolmorena03-05.mp3" class="semana">
-        <span class="semana-num">1ª SEMANA</span>
-        <span class="semana-data">04/05 a 11/05</span>
-      </a>
-      <a href="PDF/direcionamento-carol-morena04-05.pdf" target="_blank" download class="pdf-btn">
-        <span>📄</span>
-        <span>MEU<br>PDF</span>
-      </a>
-    </div>
+<div class="portal">
 
-    <!-- SEMANA 2 -->
-    <div class="button-group">
-      <a href="#" data-audio="SOM5/Carolmorena10-05.mp3" class="semana">
-        <span class="semana-num">2ª SEMANA</span>
-        <span class="semana-data">10/05 a 17/05</span>
-      </a>
-      <a href="PDF/direcionamento-carol-morena10-05.pdf" target="_blank" download class="pdf-btn">
-        <span>📄</span>
-        <span>MEU<br>PDF</span>
-      </a>
-    </div>
+  <div class="astros">🪐✨🪐</div>
 
-    <!-- SEMANA 3 -->
-    <div class="button-group">
-      <a href="#" data-audio="SOM5/Carolmorena17-05.m4a" class="semana">
-        <span class="semana-num">3ª SEMANA</span>
-        <span class="semana-data">17/05 a 24/05</span>
-      </a>
-      <a href="PDF/direcionamento-carol-morena17-05.pdf" target="_blank" class="pdf-btn">
-        <span>📄</span>
-        <span>MEU<br>PDF</span>
-      </a>
-    </div>
+  <h1>Portal Místico - Maio</h1>
 
-    <!-- SEMANA 4 -->
-    <div class="button-group">
-      <a href="#" data-audio="SOM5/Carolmorena24-05.m4a" class="semana">
-        <span class="semana-num">4ª SEMANA</span>
-        <span class="semana-data">24/05 a 31/05</span>
-      </a>
-      <a href="PDF/direcionamento-carol-morena24-05.pdf" target="_blank" class="pdf-btn">
-        <span>📄</span>
-        <span>MEU<br>PDF</span>
-      </a>
-    </div>
+  <p class="subtitle">
+    Toda segunda-feira seus áudios semanais são liberados.<br>
+    Sua leitura em áudio: voz Adria Freitas
+  </p>
+
+  <!-- SEMANA 1 -->
+  <div class="button-group">
+    <a href="#" data-audio="SOM5/Carolmorena03-05.mp3" class="semana">
+      <span class="semana-num">1ª SEMANA</span>
+      <span class="semana-data">04/05 a 11/05</span>
+    </a>
+
+    <a href="PDF/direcionamento-carol-morena04-05.pdf" target="_blank" download class="pdf-btn">
+      <span>📄</span>
+      <span>MEU<br>PDF</span>
+    </a>
   </div>
 
-  <div class="player" id="player">
-    <div class="player-card">
-      <div class="player-title">Direcionamento Espiritual</div>
-      <div class="player-week" id="playerWeek"></div>
-      <audio id="audioPlayer" controls preload="metadata"></audio>
-      <br>
-      <a onclick="closePlayer()" class="back-btn">✦ Voltar ao Portal ✦</a>
-    </div>
+  <!-- SEMANA 2 -->
+  <div class="button-group">
+    <a href="#" data-audio="SOM5/Carolmorena10-05.mp3" class="semana">
+      <span class="semana-num">2ª SEMANA</span>
+      <span class="semana-data">10/05 a 17/05</span>
+    </a>
+
+    <a href="#" onclick="mostrarAvisoPDF(event)" class="pdf-btn">
+      <span>📄</span>
+      <span>MEU<br>PDF</span>
+    </a>
   </div>
 
-  <script>
-    const semanas = document.querySelectorAll('.semana');
-    const player = document.getElementById('player');
-    const audio = document.getElementById('audioPlayer');
-    const playerWeek = document.getElementById('playerWeek');
+  <!-- SEMANA 3 -->
+  <div class="button-group">
+    <a href="#" data-audio="SOM5/Carolmorena17-05.m4a" class="semana">
+      <span class="semana-num">3ª SEMANA</span>
+      <span class="semana-data">17/05 a 24/05</span>
+    </a>
 
-    semanas.forEach(semana => {
-      semana.onclick = function(e) {
-        e.preventDefault();
-        const audioSrc = this.getAttribute('data-audio');
-        if (audioSrc) {
-          audio.src = audioSrc;
-          const num = this.querySelector('.semana-num').innerText;
-          const data = this.querySelector('.semana-data').innerText;
-          playerWeek.innerText = num + ' • ' + data;
-          player.classList.add('active');
-          audio.load();
-          audio.play().catch(err => console.log("Erro ao tocar:", err));
-        }
-      };
-    });
+    <a href="PDF/direcionamento-carol-morena17-05.pdf" target="_blank" class="pdf-btn">
+      <span>📄</span>
+      <span>MEU<br>PDF</span>
+    </a>
+  </div>
 
-    function closePlayer() {
-      player.classList.remove('active');
-      audio.pause();
-      audio.currentTime = 0;
+  <!-- SEMANA 4 -->
+  <div class="button-group">
+    <a href="#" data-audio="SOM5/Carolmorena24-05.m4a" class="semana">
+      <span class="semana-num">4ª SEMANA</span>
+      <span class="semana-data">24/05 a 31/05</span>
+    </a>
+
+    <a href="PDF/direcionamento-carol-morena24-05.pdf" target="_blank" class="pdf-btn">
+      <span>📄</span>
+      <span>MEU<br>PDF</span>
+    </a>
+  </div>
+
+</div>
+
+<div class="player" id="player">
+  <div class="player-card">
+    <div class="player-title">Direcionamento Espiritual</div>
+    <div id="playerWeek"></div>
+    <audio id="audioPlayer" controls preload="metadata"></audio>
+    <br><br>
+    <a onclick="closePlayer()" class="back-btn">✦ Voltar ao Portal ✦</a>
+  </div>
+</div>
+
+<script>
+const semanas = document.querySelectorAll('.semana');
+const player = document.getElementById('player');
+const audio = document.getElementById('audioPlayer');
+const playerWeek = document.getElementById('playerWeek');
+
+semanas.forEach(semana => {
+  semana.onclick = function(e) {
+    e.preventDefault();
+    const audioSrc = this.getAttribute('data-audio');
+
+    if (audioSrc) {
+      audio.src = audioSrc;
+      const num = this.querySelector('.semana-num').innerText;
+      const data = this.querySelector('.semana-data').innerText;
+      playerWeek.innerText = num + ' • ' + data;
+      player.classList.add('active');
+      audio.load();
+      audio.play();
     }
+  };
+});
 
-    player.onclick = function(e) {
-      if (e.target === player) closePlayer();
-    };
-  </script>
+function closePlayer() {
+  player.classList.remove('active');
+  audio.pause();
+  audio.currentTime = 0;
+}
+
+player.onclick = function(e) {
+  if (e.target === player) closePlayer();
+};
+
+function mostrarAvisoPDF(e) {
+  e.preventDefault();
+  alert("Sinto muito. Neste dia não teve PDF.");
+}
+</script>
+
 </body>
 </html>

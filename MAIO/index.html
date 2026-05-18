@@ -86,23 +86,12 @@
       text-shadow:0 0 20px rgba(250,219,93,0.6);
     }
 
-    @keyframes portalFloat{
-      0%,100%{transform:translateX(-50%) translateY(0) scale(1)}
-      50%{transform:translateX(-50%) translateY(-6px) scale(1.02)}
-    }
-
     .astros{
       position:absolute;
       top:16px;
       right:24px;
       font-size:22px;
       opacity:0.8;
-      animation:twinkle 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes twinkle{
-      0%{opacity:0.6;transform:scale(1)}
-      100%{opacity:1;transform:scale(1.1)}
     }
 
     h1{
@@ -113,8 +102,6 @@
       background:linear-gradient(45deg,#fadb5d,#ffed4e,#daa520,#fadb5d);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
-      letter-spacing:2px;
-      font-weight:400;
     }
 
     .subtitle{
@@ -123,65 +110,55 @@
       margin-bottom:40px;
       color:#e6d4a8;
       line-height:1.6;
-      text-shadow:0 2px 12px rgba(0,0,0,0.8);
     }
 
     .button-group {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 25px;
-      align-items: stretch;
+      display:flex;
+      gap:15px;
+      margin-bottom:25px;
+      align-items:stretch;
     }
 
     .semana {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 20px 15px;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:20px 15px;
       background: linear-gradient(135deg, rgba(138,43,226,0.2), rgba(75,0,130,0.15));
-      border: 1px solid rgba(250,219,93,0.3);
-      border-radius: 20px;
-      text-decoration: none;
-      color: #fadb5d;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      cursor: pointer;
-    }
-
-    .semana:hover {
-      transform: translateY(-5px) scale(1.02);
-    }
-
-    .semana-num {
-      font-size: clamp(18px, 4vw, 24px);
-      font-weight: 700;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .semana-data {
-      font-size: clamp(12px, 3vw, 15px);
-      opacity: 0.8;
+      border:1px solid rgba(250,219,93,0.3);
+      border-radius:20px;
+      text-decoration:none;
+      color:#fadb5d;
+      text-align:center;
+      cursor:pointer;
     }
 
     .pdf-btn {
-      width: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      width:100px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
       background: linear-gradient(135deg, rgba(250,219,93,0.15), rgba(218,165,32,0.1));
-      border: 1px solid rgba(250,219,93,0.4);
-      border-radius: 20px;
-      text-decoration: none;
-      color: #fadb5d;
-      font-size: 12px;
-      font-weight: bold;
-      cursor: pointer;
+      border:1px solid rgba(250,219,93,0.4);
+      border-radius:20px;
+      text-decoration:none;
+      color:#fadb5d;
+      font-size:12px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    .semana-num {
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:5px;
+    }
+
+    .semana-data {
+      font-size:14px;
+      opacity:0.8;
     }
 
     .player{
@@ -201,21 +178,30 @@
     .player-card{
       width:100%;
       max-width:500px;
+      background:#1b1035;
+      border:2px solid rgba(250,219,93,0.6);
+      border-radius:30px;
       padding:40px 30px;
       text-align:center;
-      background:#1b1035;
-      border-radius:30px;
     }
 
     .back-btn{
+      display:inline-block;
+      padding:12px 35px;
+      border-radius:50px;
       cursor:pointer;
+      color:#fadb5d;
+    }
+
+    audio{
+      width:100%;
+      margin-bottom:30px;
     }
   </style>
 </head>
 <body>
 
 <div class="portal">
-
   <div class="astros">🪐✨🪐</div>
 
   <h1>Portal Místico - Maio</h1>
@@ -231,7 +217,6 @@
       <span class="semana-num">1ª SEMANA</span>
       <span class="semana-data">04/05 a 11/05</span>
     </a>
-
     <a href="PDF/direcionamento-carol-morena04-05.pdf" target="_blank" download class="pdf-btn">
       <span>📄</span>
       <span>MEU<br>PDF</span>
@@ -244,8 +229,7 @@
       <span class="semana-num">2ª SEMANA</span>
       <span class="semana-data">10/05 a 17/05</span>
     </a>
-
-    <a href="#" onclick="mostrarAvisoPDF(event)" class="pdf-btn">
+    <a href="javascript:void(0);" onclick="mostrarAvisoPDF()" class="pdf-btn">
       <span>📄</span>
       <span>MEU<br>PDF</span>
     </a>
@@ -257,7 +241,6 @@
       <span class="semana-num">3ª SEMANA</span>
       <span class="semana-data">17/05 a 24/05</span>
     </a>
-
     <a href="PDF/direcionamento-carol-morena17-05.pdf" target="_blank" class="pdf-btn">
       <span>📄</span>
       <span>MEU<br>PDF</span>
@@ -270,13 +253,11 @@
       <span class="semana-num">4ª SEMANA</span>
       <span class="semana-data">24/05 a 31/05</span>
     </a>
-
     <a href="PDF/direcionamento-carol-morena24-05.pdf" target="_blank" class="pdf-btn">
       <span>📄</span>
       <span>MEU<br>PDF</span>
     </a>
   </div>
-
 </div>
 
 <div class="player" id="player">
@@ -284,7 +265,6 @@
     <div class="player-title">Direcionamento Espiritual</div>
     <div id="playerWeek"></div>
     <audio id="audioPlayer" controls preload="metadata"></audio>
-    <br><br>
     <a onclick="closePlayer()" class="back-btn">✦ Voltar ao Portal ✦</a>
   </div>
 </div>
@@ -296,20 +276,26 @@ const audio = document.getElementById('audioPlayer');
 const playerWeek = document.getElementById('playerWeek');
 
 semanas.forEach(semana => {
-  semana.onclick = function(e) {
+  semana.addEventListener('click', function(e) {
     e.preventDefault();
+
     const audioSrc = this.getAttribute('data-audio');
 
-    if (audioSrc) {
-      audio.src = audioSrc;
-      const num = this.querySelector('.semana-num').innerText;
-      const data = this.querySelector('.semana-data').innerText;
-      playerWeek.innerText = num + ' • ' + data;
-      player.classList.add('active');
-      audio.load();
-      audio.play();
-    }
-  };
+    audio.src = audioSrc;
+
+    const num = this.querySelector('.semana-num').innerText;
+    const data = this.querySelector('.semana-data').innerText;
+
+    playerWeek.innerText = num + ' • ' + data;
+
+    player.classList.add('active');
+
+    audio.load();
+
+    audio.play().catch(err => {
+      console.log(err);
+    });
+  });
 });
 
 function closePlayer() {
@@ -319,12 +305,13 @@ function closePlayer() {
 }
 
 player.onclick = function(e) {
-  if (e.target === player) closePlayer();
+  if (e.target === player) {
+    closePlayer();
+  }
 };
 
-function mostrarAvisoPDF(e) {
-  e.preventDefault();
-  alert("Sinto muito. Neste dia não teve PDF.");
+function mostrarAvisoPDF() {
+  alert("Neste direcionamento foi entregue somente o áudio. Não houve PDF complementar.");
 }
 </script>
 
